@@ -7,6 +7,19 @@ import java.util.UUID;
 @Entity
 @Table(name = "user_")
 public class User {
+
+    public User() {
+    }
+
+    public User(UUID id, String name, String username, String email, String gender, String creditCard) {
+        this.id = id;
+        this.name = name;
+        this.username = username;
+        this.email = email;
+        this.gender = gender;
+        this.creditCard = creditCard;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "id", nullable = false)
@@ -73,5 +86,17 @@ public class User {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", username='" + username + '\'' +
+                ", email='" + email + '\'' +
+                ", gender='" + gender + '\'' +
+                ", creditCard='" + creditCard + '\'' +
+                '}';
     }
 }
