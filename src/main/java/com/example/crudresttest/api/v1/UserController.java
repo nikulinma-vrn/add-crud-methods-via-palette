@@ -71,9 +71,11 @@ public class UserController {
 
         for (User user : users) {
             objectMapper.readerForUpdating(user).readValue(patchNode);
+            System.out.println(user);
         }
 
         List<User> resultUsers = userRepository.saveAll(users);
+        System.out.println(resultUsers);
         return resultUsers.stream()
                 .map(User::getId)
                 .toList();
