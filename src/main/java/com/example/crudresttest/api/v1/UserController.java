@@ -1,5 +1,7 @@
 package com.example.crudresttest.api.v1;
 
+import com.example.crudresttest.api.v3.UserMapper;
+import com.example.crudresttest.dto.UserDto;
 import com.example.crudresttest.entity.User;
 import com.example.crudresttest.repository.UserRepository;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -14,6 +16,10 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+/**
+ * Insert in this controller methods with default parameters
+ */
+
 @RestController
 @RequestMapping("/rest/v1")
 public class UserController {
@@ -21,6 +27,7 @@ public class UserController {
     private final UserRepository userRepository;
 
     private final ObjectMapper objectMapper;
+
 
     public UserController(UserRepository userRepository,
                           ObjectMapper objectMapper) {
@@ -65,21 +72,7 @@ public class UserController {
         return userRepository.save(user);
     }
 
-    @PatchMapping
-    public List<UUID> patchMany(@RequestParam List<UUID> ids, @RequestBody JsonNode patchNode) throws IOException {
-        Collection<User> users = userRepository.findAllById(ids);
 
-        for (User user : users) {
-            objectMapper.readerForUpdating(user).readValue(patchNode);
-            System.out.println(user);
-        }
-
-        List<User> resultUsers = userRepository.saveAll(users);
-        System.out.println(resultUsers);
-        return resultUsers.stream()
-                .map(User::getId)
-                .toList();
-    }
 
     @DeleteMapping("/{id}")
     public User delete(@PathVariable UUID id) {
@@ -94,5 +87,19 @@ public class UserController {
     public void deleteMany(@RequestParam List<UUID> ids) {
         userRepository.deleteAllById(ids);
     }
-}
 
+    @PatchMapping
+    public List<UUID> patchMany(@RequestParam List<UUID> ids, @RequestBody JsonNode patchNode) throws IOException {
+        Collection<User> users = userRepository.findAllById(ids);
+
+        for (User user : users) {
+//            objectMapper.readerForUpdating(user).readValue(patchNode);
+            objectMapper.readerForUpdating(user).readValue(patchNode);
+        }
+
+        List<User> resultUsers = userRepository.saveAll(users);
+        return resultUsers.stream()
+                .map(User::getId)
+                .toList();
+    }
+}
