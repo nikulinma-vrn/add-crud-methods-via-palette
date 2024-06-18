@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 /*
  * ToDo: Amplicode Designer -> Request Handling -> Get List
  *       DTO class: User
- *       Filter: all field
+ *       Filter: UserFilter
  *       Pagination: ON
  */
 
