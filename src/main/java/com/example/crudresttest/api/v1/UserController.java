@@ -8,36 +8,45 @@ import org.springframework.web.bind.annotation.RestController;
 /*
  * ToDo: Amplicode Designer -> Request Handling -> Get List
  *       DTO class: User
+ *       Proxy service: None
  *       Pagination: OFF
  *
  * ToDo: Amplicode Designer -> Request Handling -> Get One
  *       DTO class: User
+ *       Proxy service: None
  *       Resource path: /{id}
  *
  * ToDo: Amplicode Designer -> Request Handling -> Get Many
  *       DTO class: User
+ *       Proxy service: None
  *       Resource path: /by-ids
  *
  * ToDo: Amplicode Designer -> Request Handling -> Create
  *       DTO class: User
+ *       Proxy service: None
  *
  * ToDo: Amplicode Designer -> Request Handling -> CreateMany
  *       DTO class: User
  *       Resource path: /bulk
+ *       Proxy service: None
  *
  * ToDo: Amplicode Designer -> Request Handling -> Path
  *       DTO class: User
  *       Resource path: /{id}
+ *       Proxy service: None
  *
  * ToDo: Amplicode Designer -> Request Handling -> PathMany
  *       DTO class: User
+ *       Proxy service: None
  *
  * ToDo: Amplicode Designer -> Request Handling -> Delete
  *       DTO class: User
  *       Resource path: /{id}
+ *       Proxy service: None
  *
  * ToDo: Amplicode Designer -> Request Handling -> DeleteMany
- *       DTO class: User
+ *        Proxy service: None
+ *
  *
  */
 

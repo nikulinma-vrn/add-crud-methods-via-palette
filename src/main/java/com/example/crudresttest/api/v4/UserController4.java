@@ -45,7 +45,6 @@ import org.springframework.web.bind.annotation.RestController;
  *       Proxy service: UserServiceImpl
  *
  * ToDo: Amplicode Designer -> Request Handling -> DeleteMany
- *       DTO class: UserDto
  *       Proxy service: UserServiceImpl
  *
  */
