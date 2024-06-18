@@ -1,14 +1,8 @@
 package com.example.crudresttest.api.v4;
 
-import com.example.crudresttest.api.v2.UserFilter;
-import com.example.crudresttest.entity.User;
 import com.example.crudresttest.service.UserService;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /*
  * ToDo: Amplicode Designer -> Request Handling -> Get List

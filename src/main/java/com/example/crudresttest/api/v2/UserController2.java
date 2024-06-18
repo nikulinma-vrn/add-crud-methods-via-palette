@@ -1,11 +1,8 @@
 package com.example.crudresttest.api.v2;
 
-import com.example.crudresttest.entity.User;
 import com.example.crudresttest.repository.UserRepository;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.jpa.domain.Specification;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /*
  * ToDo: Amplicode Designer -> Request Handling -> Get List
