@@ -7,6 +7,13 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.web.bind.annotation.*;
 
+/*
+ * ToDo: Amplicode Designer -> Request Handling -> Get List
+ *       DTO class: User
+ *       Filter: all field
+ *       Pagination: ON
+ */
+
 @RestController
 @RequestMapping("/rest/v2")
 public class UserController2 {
@@ -16,12 +23,5 @@ public class UserController2 {
     public UserController2(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
-
-    @GetMapping
-    public Page<User> getList(@ModelAttribute UserFilter filter, Pageable pageable) {
-        Specification<User> spec = filter.toSpecification();
-        return userRepository.findAll(spec, pageable);
-    }
-
 }
 
