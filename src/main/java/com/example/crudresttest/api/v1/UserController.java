@@ -57,6 +57,11 @@ import java.util.UUID;
  *       DTO class: User
  *       Proxy service: None
  *
+ * ToDo: Amplicode Designer -> Request Handling -> Path
+ *       DTO class: User
+ *       Resource path: /{id}
+ *       Proxy service: None
+ *
  */
 
 @RestController
@@ -135,5 +140,13 @@ public class UserController {
     @DeleteMapping
     public void deleteMany(@RequestParam List<UUID> ids) {
         userRepository.deleteAllById(ids);
+    }
+
+    @PutMapping("/{id}")
+    public User update(@PathVariable UUID id, @RequestBody User user) {
+        if (!userRepository.existsById(id)) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Entity with id `%s` not found".formatted(id));
+        }
+        return userRepository.save(user);
     }
 }
