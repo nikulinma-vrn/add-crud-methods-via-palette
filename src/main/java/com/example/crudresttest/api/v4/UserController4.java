@@ -55,6 +55,11 @@ import java.util.UUID;
  * ToDo: Amplicode Designer -> Request Handling -> DeleteMany
  *       Proxy service: UserServiceImpl
  *
+ * ToDo: Amplicode Designer -> Request Handling -> Update
+ *       DTO class: UserDto
+ *       Resource path: /{id}
+ *       Proxy service: UserServiceImpl
+ *
  */
 
 @RestController
@@ -110,6 +115,11 @@ public class UserController4 {
     @DeleteMapping
     public void deleteMany(@RequestParam List<UUID> ids) {
         userService.deleteMany(ids);
+    }
+
+    @PutMapping("/{id}")
+    public UserDto update(@PathVariable UUID id, @RequestBody UserDto dto) {
+        return userService.update(id, dto);
     }
 }
 

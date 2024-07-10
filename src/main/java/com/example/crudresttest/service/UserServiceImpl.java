@@ -120,4 +120,13 @@ public class UserServiceImpl implements UserService {
     public void deleteMany(List<UUID> ids) {
         userRepository.deleteAllById(ids);
     }
+
+    @Override
+    public UserDto update(UUID id, UserDto dto) {
+        User user = userRepository.findById(id).orElseThrow(() ->
+                new ResponseStatusException(HttpStatus.NOT_FOUND, "Entity with id `%s` not found".formatted(id)));
+        userMapper.updateWithNull(dto, user);
+        User resultUser = userRepository.save(user);
+        return userMapper.toDto(resultUser);
+    }
 }

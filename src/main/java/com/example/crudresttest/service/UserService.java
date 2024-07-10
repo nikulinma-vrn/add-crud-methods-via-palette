@@ -30,4 +30,6 @@ public interface UserService {
     UserDto delete(UUID id);
 
     void deleteMany(List<UUID> ids);
+
+    UserDto update(UUID id, UserDto dto);
 }
