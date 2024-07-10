@@ -34,4 +34,3 @@ public class UserController2 {
         return userRepository.findAll(spec, pageable);
     }
 }
-

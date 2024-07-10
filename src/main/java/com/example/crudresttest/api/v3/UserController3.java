@@ -141,5 +141,14 @@ public class UserController3 {
                 .map(User::getId)
                 .toList();
     }
+
+    @PutMapping("/{id}")
+    public UserDto update(@PathVariable UUID id, @RequestBody UserDto dto) {
+        User user = userRepository.findById(id).orElseThrow(() ->
+                new ResponseStatusException(HttpStatus.NOT_FOUND, "Entity with id `%s` not found".formatted(id)));
+        userMapper.updateWithNull(dto, user);
+        User resultUser = userRepository.save(user);
+        return userMapper.toDto(resultUser);
+    }
 }
 
