@@ -57,7 +57,7 @@ import java.util.UUID;
  *       DTO class: User
  *       Proxy service: None
  *
- * ToDo: Amplicode Designer -> Request Handling -> Path
+ * ToDo: Amplicode Designer -> Request Handling -> Update
  *       DTO class: User
  *       Resource path: /{id}
  *       Proxy service: None
