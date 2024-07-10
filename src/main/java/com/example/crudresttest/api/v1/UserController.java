@@ -47,6 +47,10 @@ import org.springframework.web.bind.annotation.RestController;
  * ToDo: Amplicode Designer -> Request Handling -> DeleteMany
  *        Proxy service: None
  *
+ * ToDo: Amplicode Designer -> Request Handling -> Update
+ *       DTO class: User
+ *       Resource path: /{id}
+ *       Proxy service: None
  *
  */
 

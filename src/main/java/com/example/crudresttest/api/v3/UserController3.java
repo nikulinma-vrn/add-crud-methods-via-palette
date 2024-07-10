@@ -33,6 +33,11 @@ import org.springframework.web.bind.annotation.RestController;
  * ToDo: Amplicode Designer -> Request Handling -> PathMany
  *       DTO class: UserDto
  *
+ * ToDo: Amplicode Designer -> Request Handling -> Update
+ *       DTO class: UserDto
+ *       Proxy service: None
+ *       Resource path: /{id}
+ *
  */
 
 @RestController
